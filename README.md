@@ -1,12 +1,5 @@
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/jigsawhsi-a-network-for-hyperspectral-image/hyperspectral-image-classification-on-pavia)](https://paperswithcode.com/sota/hyperspectral-image-classification-on-pavia?p=jigsawhsi-a-network-for-hyperspectral-image)
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/jigsawhsi-a-network-for-hyperspectral-image/hyperspectral-image-classification-on-salinas-1)](https://paperswithcode.com/sota/hyperspectral-image-classification-on-salinas-1?p=jigsawhsi-a-network-for-hyperspectral-image)
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/jigsawhsi-a-network-for-hyperspectral-image/hyperspectral-image-classification-on-indian)](https://paperswithcode.com/sota/hyperspectral-image-classification-on-indian?p=jigsawhsi-a-network-for-hyperspectral-image)
-
-
-# JigsawHSI
-Application of the Jigsaw network to Hyperspectral Image (HSI) classification.
+# RHSI-Net based on JigsawHSI
+Application of the RHSI network to Hyperspectral Image (HSI) classification.
 
 
 # Requisites
@@ -30,7 +23,7 @@ You need to run Jupyter in your local machine:
 - Change directories to the cloned repository
 - Run Jupyter in your local machine
 - Follow the instructions to open Jupyter in your browser and connect to it
-- Open the JigsawHSI.ipyb notebook and run the cells
+- Open the RHSI_Net.ipyb notebook and run the cells
 
 # How to make changes
 There are two main ways to run variants of the JigsawHSI:
@@ -45,3 +38,4 @@ You can read the early release of the paper in ArXiv or in this repository: Jigs
 # Acknowledgements
 
 Thanks to Gopal Krishna, for making the HyperSN code available in github (https://github.com/gokriznastic/HybridSN).
+Special thanks to JigsawHSI Project(https://github.com/jmoraga-mines/JigsawHSI), Jaime Moraga, H. Sebnem Duzgun. Without you, I wouldn't have been able to graduate.
