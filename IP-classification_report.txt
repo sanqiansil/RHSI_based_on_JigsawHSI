@@ -1,0 +1,190 @@
+Classification Summary
+329.588 Test loss (%)
+ 99.512 Test accuracy (%)
+ 99.444 Kappa accuracy (%)
+ 99.512 Overall accuracy (%)
+ 98.246 Average accuracy (%)
+
+                              precision    recall  f1-score   support
+
+                     Alfalfa       1.00      0.97      0.98        32
+                 Corn-notill       0.99      1.00      1.00      1000
+                Corn-mintill       0.98      0.99      0.99       581
+                        Corn       0.98      1.00      0.99       166
+               Grass-pasture       1.00      0.99      1.00       338
+                 Grass-trees       0.99      1.00      0.99       511
+         Grass-pasture-mowed       1.00      0.95      0.97        20
+               Hay-windrowed       1.00      1.00      1.00       335
+                        Oats       1.00      0.86      0.92        14
+              Soybean-notill       1.00      1.00      1.00       680
+             Soybean-mintill       1.00      1.00      1.00      1719
+               Soybean-clean       1.00      0.99      0.99       415
+                       Wheat       1.00      0.99      0.99       143
+                       Woods       1.00      0.99      1.00       886
+Buildings-Grass-Trees-Drives       1.00      1.00      1.00       270
+          Stone-Steel-Towers       0.98      1.00      0.99        65
+
+                    accuracy                           1.00      7175
+                   macro avg       0.99      0.98      0.99      7175
+                weighted avg       1.00      1.00      1.00      7175
+
+
+[[  31    1    0    0    0    0    0    0    0    0    0    0    0    0     0    0]
+[   0  998    0    0    0    0    0    0    0    1    1    0    0    0     0    0]
+[   0    0  577    4    0    0    0    0    0    0    0    0    0    0     0    0]
+[   0    0    0  166    0    0    0    0    0    0    0    0    0    0     0    0]
+[   0    0    2    0  336    0    0    0    0    0    0    0    0    0     0    0]
+[   0    0    0    0    0  509    0    0    0    0    2    0    0    0     0    0]
+[   0    0    0    0    0    1   19    0    0    0    0    0    0    0     0    0]
+[   0    0    0    0    0    0    0  335    0    0    0    0    0    0     0    0]
+[   0    0    2    0    0    0    0    0   12    0    0    0    0    0     0    0]
+[   0    1    0    0    0    0    0    0    0  679    0    0    0    0     0    0]
+[   0    3    0    0    0    5    0    0    0    0 1711    0    0    0     0    0]
+[   0    0    3    0    0    0    0    0    0    1    0  410    0    0     0    1]
+[   0    0    2    0    0    0    0    0    0    0    0    0  141    0     0    0]
+[   0    1    0    0    0    0    0    1    0    1    2    0    0  881     0    0]
+[   0    0    0    0    0    0    0    0    0    0    0    0    0    0   270    0]
+[   0    0    0    0    0    0    0    0    0    0    0    0    0    0     0   65]]
+
+Accuracy by target:
+ 96.8750 : Alfalfa
+ 99.8000 : Corn-notill
+ 99.3115 : Corn-mintill
+100.0000 : Corn
+ 99.4083 : Grass-pasture
+ 99.6086 : Grass-trees
+ 95.0000 : Grass-pasture-mowed
+100.0000 : Hay-windrowed
+ 85.7143 : Oats
+ 99.8529 : Soybean-notill
+ 99.5346 : Soybean-mintill
+ 98.7952 : Soybean-clean
+ 98.6014 : Wheat
+ 99.4357 : Woods
+100.0000 : Buildings-Grass-Trees-Drives
+100.0000 : Stone-Steel-Towers
+
+
+Model: "model_1"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ input_2 (InputLayer)           [(None, 25, 25, 30,  0           []                               
+                                 1)]                                                              
+                                                                                                  
+ conv3d_9 (Conv3D)              (None, 25, 25, 30,   16          ['input_2[0][0]']                
+                                4)                                                                
+                                                                                                  
+ conv3d_10 (Conv3D)             (None, 25, 25, 30,   112         ['input_2[0][0]']                
+                                4)                                                                
+                                                                                                  
+ conv3d_11 (Conv3D)             (None, 25, 25, 30,   304         ['input_2[0][0]']                
+                                4)                                                                
+                                                                                                  
+ batch_normalization_6 (BatchNo  (None, 25, 25, 30,   16         ['conv3d_9[0][0]']               
+ rmalization)                   4)                                                                
+                                                                                                  
+ batch_normalization_7 (BatchNo  (None, 25, 25, 30,   16         ['conv3d_10[0][0]']              
+ rmalization)                   4)                                                                
+                                                                                                  
+ batch_normalization_8 (BatchNo  (None, 25, 25, 30,   16         ['conv3d_11[0][0]']              
+ rmalization)                   4)                                                                
+                                                                                                  
+ concatenate_2 (Concatenate)    (None, 25, 25, 30,   0           ['batch_normalization_6[0][0]',  
+                                12)                               'batch_normalization_7[0][0]',  
+                                                                  'batch_normalization_8[0][0]']  
+                                                                                                  
+ conv3d_12 (Conv3D)             (None, 25, 25, 30,   5200        ['concatenate_2[0][0]']          
+                                16)                                                               
+                                                                                                  
+ conv3d_13 (Conv3D)             (None, 25, 25, 30,   13856       ['conv3d_12[0][0]']              
+                                32)                                                               
+                                                                                                  
+ conv3d_14 (Conv3D)             (None, 25, 25, 30,   48032       ['concatenate_2[0][0]']          
+                                32)                                                               
+                                                                                                  
+ add_2 (Add)                    (None, 25, 25, 30,   0           ['conv3d_13[0][0]',              
+                                32)                               'conv3d_14[0][0]']              
+                                                                                                  
+ batch_normalization_9 (BatchNo  (None, 25, 25, 30,   128        ['add_2[0][0]']                  
+ rmalization)                   32)                                                               
+                                                                                                  
+ conv3d_15 (Conv3D)             (None, 25, 25, 30,   13840       ['batch_normalization_9[0][0]']  
+                                16)                                                               
+                                                                                                  
+ conv3d_16 (Conv3D)             (None, 25, 25, 30,   13856       ['conv3d_15[0][0]']              
+                                32)                                                               
+                                                                                                  
+ conv3d_17 (Conv3D)             (None, 25, 25, 30,   128032      ['batch_normalization_9[0][0]']  
+                                32)                                                               
+                                                                                                  
+ add_3 (Add)                    (None, 25, 25, 30,   0           ['conv3d_16[0][0]',              
+                                32)                               'conv3d_17[0][0]']              
+                                                                                                  
+ batch_normalization_10 (BatchN  (None, 25, 25, 30,   128        ['add_3[0][0]']                  
+ ormalization)                  32)                                                               
+                                                                                                  
+ reshape_1 (Reshape)            (None, 25, 25, 960)  0           ['batch_normalization_10[0][0]'] 
+                                                                                                  
+ conv2d_12 (Conv2D)             (None, 25, 25, 512)  4424192     ['reshape_1[0][0]']              
+                                                                                                  
+ batch_normalization_11 (BatchN  (None, 25, 25, 512)  2048       ['conv2d_12[0][0]']              
+ ormalization)                                                                                    
+                                                                                                  
+ conv2d_14 (Conv2D)             (None, 25, 25, 96)   49248       ['batch_normalization_11[0][0]'] 
+                                                                                                  
+ conv2d_16 (Conv2D)             (None, 25, 25, 16)   8208        ['batch_normalization_11[0][0]'] 
+                                                                                                  
+ conv2d_18 (Conv2D)             (None, 25, 25, 16)   8208        ['batch_normalization_11[0][0]'] 
+                                                                                                  
+ conv2d_20 (Conv2D)             (None, 25, 25, 16)   8208        ['batch_normalization_11[0][0]'] 
+                                                                                                  
+ max_pooling2d_1 (MaxPooling2D)  (None, 25, 25, 512)  0          ['batch_normalization_11[0][0]'] 
+                                                                                                  
+ conv2d_13 (Conv2D)             (None, 25, 25, 256)  131328      ['batch_normalization_11[0][0]'] 
+                                                                                                  
+ conv2d_15 (Conv2D)             (None, 25, 25, 128)  110720      ['conv2d_14[0][0]']              
+                                                                                                  
+ conv2d_17 (Conv2D)             (None, 25, 25, 128)  51328       ['conv2d_16[0][0]']              
+                                                                                                  
+ conv2d_19 (Conv2D)             (None, 25, 25, 128)  100480      ['conv2d_18[0][0]']              
+                                                                                                  
+ conv2d_21 (Conv2D)             (None, 25, 25, 64)   83008       ['conv2d_20[0][0]']              
+                                                                                                  
+ conv2d_22 (Conv2D)             (None, 25, 25, 32)   16416       ['max_pooling2d_1[0][0]']        
+                                                                                                  
+ conv2d_23 (Conv2D)             (None, 25, 25, 96)   49248       ['batch_normalization_11[0][0]'] 
+                                                                                                  
+ concatenate_3 (Concatenate)    (None, 25, 25, 832)  0           ['conv2d_13[0][0]',              
+                                                                  'conv2d_15[0][0]',              
+                                                                  'conv2d_17[0][0]',              
+                                                                  'conv2d_19[0][0]',              
+                                                                  'conv2d_21[0][0]',              
+                                                                  'conv2d_22[0][0]',              
+                                                                  'conv2d_23[0][0]']              
+                                                                                                  
+ batch_normalization1 (BatchNor  (None, 25, 25, 832)  3328       ['concatenate_3[0][0]']          
+ malization)                                                                                      
+                                                                                                  
+ avg_pooling (AveragePooling2D)  (None, 23, 23, 832)  0          ['batch_normalization1[0][0]']   
+                                                                                                  
+ flatten_1 (Flatten)            (None, 440128)       0           ['avg_pooling[0][0]']            
+                                                                                                  
+ dense_3 (Dense)                (None, 256)          112673024   ['flatten_1[0][0]']              
+                                                                                                  
+ dropout_2 (Dropout)            (None, 256)          0           ['dense_3[0][0]']                
+                                                                                                  
+ dense_4 (Dense)                (None, 32)           8224        ['dropout_2[0][0]']              
+                                                                                                  
+ dropout_3 (Dropout)            (None, 32)           0           ['dense_4[0][0]']                
+                                                                                                  
+ dense_5 (Dense)                (None, 16)           528         ['dropout_3[0][0]']              
+                                                                                                  
+ prob (Activation)              (None, 16)           0           ['dense_5[0][0]']                
+                                                                                                  
+==================================================================================================
+Total params: 117,951,296
+Trainable params: 117,948,456
+Non-trainable params: 2,840
+__________________________________________________________________________________________________
+
