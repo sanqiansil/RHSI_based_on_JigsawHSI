@@ -38,4 +38,4 @@ You can read the early release of the paper in ArXiv or in this repository: Jigs
 # Acknowledgements
 
 Thanks to Gopal Krishna, for making the HyperSN code available in github (https://github.com/gokriznastic/HybridSN).
-Special thanks to JigsawHSI Project(https://github.com/jmoraga-mines/JigsawHSI), Jaime Moraga, H. Sebnem Duzgun. Without you, I wouldn't have been able to graduate.
+Special thanks to JigsawHSI Project(https://github.com/jmoraga-mines/JigsawHSI), Jaime Moraga, H. Sebnem Duzgun.
